@@ -1,4 +1,16 @@
 <div class="py-5">
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        The form contains <%= pluralize(@company.errors.count, "error") %>.
+      </div>
+      <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= form_for @company do |f| %>
 
     <div class="row my-lg-3">

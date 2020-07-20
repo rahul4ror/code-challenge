@@ -12,7 +12,8 @@
     <div class="container p-5 text-white">
       <h1><%= @company.name %></h1>
       <h3>City, State</h3>
-      <pre>☝️ This is what needs to be udpated. Examples: Atlanta, GA or Nashvile, TN</pre>
+      <!-- Used helper method to get city state from zipcode -->
+      <pre><%= find_city_state_name(@company.zip_code) %></pre>
     </div>
   </div>
   <% if @company.description.present? %>
